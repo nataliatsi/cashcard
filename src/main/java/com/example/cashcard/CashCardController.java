@@ -1,6 +1,7 @@
 package com.example.cashcard;
 
 import java.net.URI;
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +24,9 @@ public class CashCardController {
     }
 
     @PostMapping
-    private ResponseEntity<Void> createCashCard(@RequestBody CashCard newCashCard, UriComponentsBuilder ucb) {
-        CashCard savedCashCard = cardRepository.save(newCashCard);
+    private ResponseEntity<Void> createCashCard(@RequestBody CashCard newCashCardRequest, UriComponentsBuilder ucb, Principal principal) {
+        CashCard cashCardWithOwner = new CashCard(null, newCashCardRequest.amount(), principal.getName());
+        CashCard savedCashCard = cardRepository.save(cashCardWithOwner);
         URI locationOfNewCashCard = ucb
                 .path("cashcards/{id}")
                 .buildAndExpand(savedCashCard.id())
@@ -33,8 +35,8 @@ public class CashCardController {
     }
 
     @GetMapping("/{requestedId}")
-    private ResponseEntity<CashCard> findById(@PathVariable Long requestedId) {
-        Optional<CashCard> cOptional = cardRepository.findById(requestedId);
+    private ResponseEntity<CashCard> findById(@PathVariable Long requestedId, Principal principal) {
+        Optional<CashCard> cOptional = Optional.ofNullable(cardRepository.findByIdAndOwner(requestedId, principal.getName()));
         if (cOptional.isPresent()) {
             return ResponseEntity.ok(cOptional.get());
         } else {
@@ -43,8 +45,8 @@ public class CashCardController {
     }
 
     @GetMapping
-    private ResponseEntity<List<CashCard>> findAll(Pageable pageable) {
-        Page<CashCard> page = cardRepository.findAll(
+    private ResponseEntity<List<CashCard>> findAll(Pageable pageable, Principal principal) {
+        Page<CashCard> page = cardRepository.findByOwner(principal.getName(),
                 PageRequest.of(
                         pageable.getPageNumber(),
                         pageable.getPageSize(),
@@ -53,5 +55,4 @@ public class CashCardController {
         return ResponseEntity.ok(page.getContent());
     }
 
-    //TODO: (lab) lição 09 -> att repository e controller (uso do Principal)
 }
