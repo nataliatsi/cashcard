@@ -1,37 +1,108 @@
-# Aplicação Family Cash Card
+<h1 align="center">💳 CASHCARD</h1>
 
-## Sobre o Projeto
+<p align="center"><em>Empowering Financial Freedom Through Seamless Card Management</em></p>
 
-Olá! Bem-vindo ao repositório da minha aplicação Family Cash Card! Este projeto faz parte do curso Spring Essentials na Spring Academy, que é uma parte crucial da preparação para o exame Spring Certified Professional.
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/nataliatsi/cashcard?style=flat&logo=git&logoColor=white&color=0080ff">
+  <img src="https://img.shields.io/github/languages/top/nataliatsi/cashcard?style=flat&color=0080ff">
+  <img src="https://img.shields.io/github/languages/count/nataliatsi/cashcard?style=flat&color=0080ff">
+</p>
 
-Estou construindo uma aplicação simples de Family Cash Card como parte deste curso — uma maneira moderna para os pais gerenciarem os fundos de mesada para seus filhos.
+<p align="center"><em>Built with the tools and technologies:</em></p>
 
-No decorrer deste projeto, estou utilizando o Spring Boot para progredir desde a criação de um único cartão de dinheiro em um banco de dados até permitir a edição, exclusão e visualização de múltiplos cartões de dinheiro, e finalmente garantir meu aplicativo contra acesso não autorizado e explorações indesejadas.
+<p align="center">
+ <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat&logo=spring-boot&logoColor=white">
+  <img src="https://img.shields.io/badge/RESTful%20API-000000?style=flat&logo=OpenAPI%20Initiative&logoColor=white">
+  <img src="https://img.shields.io/badge/JUnit-25A162?style=flat&logo=JUnit5&logoColor=white">
+  <img src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white">
+  <img src="https://img.shields.io/badge/Gradle-02303A.svg?style=flat&logo=Gradle&logoColor=white">
+</p>
 
-## O que Estou Aprendendo?
+---
 
-Este curso é uma parte crucial da minha preparação para o exame Spring Certified Professional. Até o momento, aprendi a:
+## Table of Contents
 
-- Utilizar o Spring Boot para construir uma API RESTful completa, compreendendo os benefícios e as compensações do REST.
-- Entender o que o Spring Boot oferece aos desenvolvedores de aplicativos e como ele difere do Spring Framework.
-- Construir aplicações da web com o Spring Web.
-- Usar o Spring Data para conectar bancos de dados e mapear dados relacionais para objetos Java.
-- Utilizar o Spring Security para desenvolver software com uma abordagem de Segurança em Primeiro lugar.
+* [Overview](#overview)  
+* [Getting Started](#getting-started)  
+  * [Prerequisites](#prerequisites)  
+  * [Installation](#installation)  
+  * [Usage](#usage)  
+  * [Testing](#testing)
 
-## Abordagem de Desenvolvimento
+- - -
 
-Uma qualidade única deste curso é a de Test-First para o desenvolvimento. Nos Labs, geralmente escrevemos testes antes da implementação e, em seguida, adicionamos a implementação para fazer os testes passarem.
+## Overview
 
-## Detalhes do Curso
+Cashcard is a developer-friendly microservice designed to simplify the management of family cash cards through secure, RESTful APIs. Built with Spring Boot and Java 17, it offers a scalable and modular architecture that integrates seamlessly into modern development workflows.
 
-- **Curso**: Spring Essentials na Spring Academy
-- **Preparação para**: Exame Spring Certified Professional
-- **Conteúdo do Curso**: Estou construindo uma API RESTful para um serviço Family Cash Card, aprendendo como usar o Spring Boot para construir uma aplicação totalmente funcional. A abordagem é baseada em projetos, teste primeiro, em vez de baseada em tecnologia.
+**Why cashcard?**
 
-## Recursos
+This project enables developers to rapidly build, test, and deploy secure financial management applications. The core features include:
 
-- [Spring Academy](https://spring.academy/home)
-- [Documentação do Spring Boot](https://spring.io/projects/spring-boot)
-- [Documentação do Spring Framework](https://spring.io/projects/spring-framework)
-- [Documentação do Spring Data](https://spring.io/projects/spring-data)
-- [Documentação do Spring Security](https://spring.io/projects/spring-security)
+*   🛠️ **API Endpoints:** Provides comprehensive RESTful interfaces for creating, viewing, updating, and deleting cash cards.
+*   🔒 **Security:** Implements role-based access control to safeguard sensitive financial data.
+*   📊 **Testing Suite:** Includes extensive tests for data integrity, authorization, and JSON serialization.
+*   ⚙️ **Build Automation:** Utilizes Gradle for consistent, streamlined project setup and deployment.
+*   🧩 **Modular Architecture:** Organizes code into manageable modules, supporting scalability and maintainability.
+
+- - -
+
+## Getting Started
+
+### Prerequisites
+
+This project requires the following dependencies:
+
+*   **Programming Language:** Java
+*   **Package Manager:** Gradle
+
+### Installation
+
+Build cashcard from the source and install dependencies:
+
+1.  **Clone the repository:**
+    
+    ```sh
+    ❯ git clone https://github.com/nataliatsi/cashcard
+    ```
+    
+2.  **Navigate to the project directory:**
+    
+    ```sh
+    ❯ cd cashcard
+    ```
+    
+3.  **Install the dependencies:**
+    
+
+**Using [gradle](https://gradle.org/):**
+
+```sh
+❯ gradle build
+```
+
+### Usage
+
+Run the project with:
+
+**Using [gradle](https://gradle.org/):**
+
+```sh
+gradle run
+```
+
+### Testing
+
+Cashcard uses the {**test\_framework**} test framework. Run the test suite with:
+
+**Using [gradle](https://gradle.org/):**
+
+```sh
+gradle test
+```
+
+- - -
+
+[⬆ Return](#top)
+
+- - -
